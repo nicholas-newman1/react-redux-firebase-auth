@@ -16,10 +16,9 @@
 
 # User Profile
 
-- Depending on the config, you may need a user profile.
-- You will need a user profile if you wish to:
+- Depending on the config, you may need to use the cloud functions package which manages a user profile.
+- You will need to use the cloud functions package if you wish to:
   - have unique usernames
   - sign in with username
   - store both a name and username
   - access a user's profile data without being signed in as them
-- The cloud functions package handles the creation and management of user profiles
