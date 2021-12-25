@@ -26,8 +26,8 @@
     "export": "firebase emulators:export ./backups/emulator",
     "kill-emulator": "kill-port 4000 9099 8080 5001",
     "deploy": "npm run build && firebase deploy --only hosting",
-    "link": "npm link @yourfuse/webfuse && npm link ../node_modules/react",
-    "unlink": "npm unlink @yourfuse/webfuse && npm unlink ../node_modules/react"
+    "link": "npm link react-redux-firebase-auth && npm link ../node_modules/react",
+    "unlink": "npm unlink react-redux-firebase-auth && npm unlink ../node_modules/react"
   },
   "eslintConfig": {
     "extends": [

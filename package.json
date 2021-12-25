@@ -1,10 +1,20 @@
 {
   "name": "react-redux-firebase-auth",
   "author": "Nicholas Newman",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nicholas-newman1/react-redux-firebase-auth"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "firebase",
+    "authentication"
+  ],
   "files": [
     "dist",
     "src"

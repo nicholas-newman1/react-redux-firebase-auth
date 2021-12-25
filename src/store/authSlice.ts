@@ -249,7 +249,7 @@ export const authSlice = createSlice({
       if (state.user) state.user = { ...state.user, ...action.payload };
     },
     verifySuccess: (state, action: { type: string; payload: User | null }) => {
-      state.loaded = false;
+      state.loaded = true;
       state.user = action.payload;
     },
     displaySignInDialog: state => {
