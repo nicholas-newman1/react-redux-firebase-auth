@@ -7,7 +7,9 @@ import {
   Theme,
   TypographyProps,
 } from '@material-ui/core';
+import { AnyAction, Reducer } from '@reduxjs/toolkit';
 import firebase from 'firebase/app';
+import { AuthState } from '../store/initialState';
 
 export interface User {
   displayName: string | null;
@@ -21,6 +23,8 @@ export interface User {
 }
 
 export type FirebaseApp = firebase.app.App;
+
+export type AuthReducer<Profile> = Reducer<AuthState<Profile>, AnyAction>;
 
 export interface SignInWithConfig {
   username?: boolean;

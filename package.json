@@ -1,7 +1,7 @@
 {
   "name": "react-redux-firebase-auth",
   "author": "Nicholas Newman",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",

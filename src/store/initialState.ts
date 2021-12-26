@@ -1,7 +1,6 @@
 import { User } from '../types/client';
-
-const initialState: {
-  user: User | null;
+export interface AuthState<Profile> {
+  user: (Profile & User) | null;
   loaded: boolean;
   signInDialog: {
     open: boolean;
@@ -34,7 +33,9 @@ const initialState: {
     email?: string;
     password?: string;
   };
-} = {
+}
+
+const initialState: AuthState<{}> = {
   user: null,
   loaded: false,
   signInDialog: {

@@ -2,7 +2,6 @@ import reducer from './store/authSlice';
 import * as actions from './store/authSlice';
 import { useAppDispatch } from './hooks/useAppDispatch';
 import { SignUpFormFields, User } from './types/client';
-import { useAppSelector } from './hooks/useAppSelector';
 import { useContext } from 'react';
 import ReactReduxFirebaseAuthContext from './ReactReduxFirebaseAuthContext';
 
@@ -10,7 +9,7 @@ export * from './types/client';
 export * from './components';
 export * from './containers';
 export { default as ReactReduxFirebaseAuthProvider } from './ReactReduxFirebaseAuthProvider';
-export const authReducer = { auth: reducer };
+export const authReducer = reducer;
 export * from './store/authSlice';
 
 export const useAuth = () => {
@@ -18,7 +17,6 @@ export const useAuth = () => {
   const context = useContext(ReactReduxFirebaseAuthContext);
   const app = context?.app;
   const config = context?.config;
-  const state = useAppSelector(state => state.auth);
 
   // Actions
   const verifySuccess = (user: User | null) =>
@@ -54,9 +52,6 @@ export const useAuth = () => {
     dispatch(actions.signUp({ app, config, fields }));
 
   return {
-    // State
-    state,
-
     // Actions
     verifySuccess,
     displaySignInDialog,

@@ -13,7 +13,7 @@ react-redux-firebase-auth depends on React, React DOM, Redux, Material-UI, and F
 3. Create custom theme
 4. Wrap your app in ReactReduxFirebaseAuthProvider and pass the firebase app, redux store, material ui theme, and any other optional config values.
 
-```js
+```tsx
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {
@@ -45,10 +45,15 @@ const app = firebase.initializeApp(config);
 // custom theme
 const theme = createTheme();
 
-// create reducer
+// if using firestore profile and typescript, you can define it here
+interface Profile {
+  isAdmin: boolean;
+}
+
+// add auth reducer under the name auth!
 export const reducer = combineReducers({
-  // react-redux-firebase-auth reducers
-  ...authReducer,
+  // typecast if using profile, otherwise skip the "as AuthReducer<Profile>" part
+  auth: authReducer as AuthReducer<Profile>,
   // ...your other reducers
 });
 
@@ -93,7 +98,7 @@ ReactDOM.render(
 
 ## useAuth
 
-The useAuth hook conveniently provides the auth state and all of the packages actions without having to dispatch them. For example, if you want to create a login button that displays the login dialog. You can do the following:
+The useAuth hook conveniently provides the all of the packages actions without having to dispatch them. For example, if you want to create a login button that displays the login dialog. You can do the following:
 
 ```js
 import { useAuth } from 'react-redux-firebase-auth';

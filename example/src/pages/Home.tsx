@@ -1,13 +1,10 @@
 import { Button } from '@material-ui/core';
 import { useAuth } from 'react-redux-firebase-auth';
+import { useAppSelector } from '../hooks/useAppSelector';
 
 const Home = () => {
-  const {
-    state,
-    displaySignInDialog,
-    displayEditProfileDialog,
-    signOut,
-  } = useAuth();
+  const { displaySignInDialog, displayEditProfileDialog, signOut } = useAuth();
+  const state = useAppSelector(state => state.auth);
 
   return (
     <div>

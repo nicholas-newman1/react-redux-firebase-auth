@@ -2,7 +2,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { authReducer } from 'react-redux-firebase-auth';
 
 export const reducer = combineReducers({
-  ...authReducer,
+  auth: authReducer,
 });
 
 const store = configureStore({
